@@ -8,6 +8,8 @@ ipykernel = "*"
 pandas = "==1.2.4"
 numpy = "*"
 click = "*"
+python-dotenv = "*"
+pyyaml = "*"
 
 [dev-packages]
 
