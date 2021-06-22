@@ -4,7 +4,10 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pandas = "*"
+ipykernel = "*"
+pandas = "==1.2.4"
+numpy = "*"
+click = "*"
 python-dotenv = "*"
 pyyaml = "*"
 
