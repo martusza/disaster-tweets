@@ -134,5 +134,5 @@ dmypy.json
 secrets
 
 # Datasets
-.zip
-.csv
+*.zip
+*.csv
