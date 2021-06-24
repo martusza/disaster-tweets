@@ -1,8 +1,9 @@
 import numpy as np
 import pandas as pd
-from sklearn.base import BaseEstimator, ClassifierMixin, TransformerMixin
-
+import re
 import spacy
+
+from sklearn.base import BaseEstimator, ClassifierMixin, TransformerMixin
 
 
 class TextCleanTransformer(TransformerMixin, BaseEstimator):
@@ -10,8 +11,17 @@ class TextCleanTransformer(TransformerMixin, BaseEstimator):
                  nlp_model=None):
         self.nlp_model = nlp_model
 
+    @staticmethod
+    def preprocess_text(text):
+        text = re.sub(r'\n', ' ', text)
+        text = re.sub(r'@[A-Za-z0-9_]+', ' ', text)
+        text = re.sub(r'#', ' ', text)
+        return text
+
     def preprocess_sentence(self, text):
-        doc = self.nlp_model(text.replace('\n', ' '))
+        text = self.preprocess_text(text)
+
+        doc = self.nlp_model(text)
         output_text = []
         for token in doc:
             if not any([token.is_stop, token.like_url, token.is_punct,
