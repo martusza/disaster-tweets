@@ -45,9 +45,10 @@ if __name__ == "__main__":
     mlflow.sklearn.autolog()
     """
 
-    with mlflow.start_run():
-        tfidf_params = {'ngram_range': (1, 1),
-                        'max_features': 3000}
+    with mlflow.start_run(run_name='GaussianNB'):
+        tfidf_params = {'ngram_range': (1, 3),
+                        'max_features': 5000,
+                        'min_df': 3}
 
         pipe = Pipeline([('clean', TextCleanTransformer()),
                          ('tfidf', TfidfVectorizer(**tfidf_params)),
@@ -70,4 +71,5 @@ if __name__ == "__main__":
         mlflow.log_metric("fp", f_p)
         mlflow.log_metric("fn", f_n)
         mlflow.log_metric("tp", t_p)
+
 
