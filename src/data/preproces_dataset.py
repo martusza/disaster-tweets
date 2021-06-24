@@ -2,6 +2,8 @@ import numpy as np
 import pandas as pd
 import re
 import spacy
+import emoji
+
 
 from sklearn.base import BaseEstimator, ClassifierMixin, TransformerMixin
 
@@ -16,6 +18,8 @@ class TextCleanTransformer(TransformerMixin, BaseEstimator):
         text = re.sub(r'\n', ' ', text)
         text = re.sub(r'@[A-Za-z0-9_]+', ' ', text)
         text = re.sub(r'#', ' ', text)
+        text = re.sub(r'RT : ', ' ', text)
+        text = re.sub(emoji.get_emoji_regexp(), ' ', text)
         return text
 
     def preprocess_sentence(self, text):
