@@ -11,6 +11,7 @@ click = "*"
 python-dotenv = "*"
 pyyaml = "*"
 tensorflow = "*"
+scikit-learn = "*"
 
 [dev-packages]
 
