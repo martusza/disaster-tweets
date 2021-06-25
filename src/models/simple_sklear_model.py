@@ -45,7 +45,9 @@ if __name__ == "__main__":
     mlflow.sklearn.autolog()
     """
 
+    mlflow.set_experiment(experiment_name='Kaggle')
     with mlflow.start_run(run_name='GaussianNB'):
+
         tfidf_params = {'ngram_range': (1, 3),
                         'max_features': 5000,
                         'min_df': 3}
@@ -71,5 +73,3 @@ if __name__ == "__main__":
         mlflow.log_metric("fp", f_p)
         mlflow.log_metric("fn", f_n)
         mlflow.log_metric("tp", t_p)
-
-

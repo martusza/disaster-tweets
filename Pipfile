@@ -16,6 +16,7 @@ sklearn = "*"
 scikit-learn = "*"
 spacy = "*"
 mlflow = "*"
+emoji = "*"
 
 [dev-packages]
 
