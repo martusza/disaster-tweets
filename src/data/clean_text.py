@@ -29,6 +29,13 @@ class TextCleaner(object):
         clean_text = regex.sub('', text)
         return clean_text
 
+    def remove_links_text(self):
+        """
+
+        :return:
+        """
+        self.text_col = self.text_col.apply(self.remove_links_tweet)
+
     def tf_tokenize(self,
                     dataset: 'str' = 'train',
                     num_words: int = 8000,

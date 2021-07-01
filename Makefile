@@ -20,7 +20,11 @@ include .env
 
 get_dataset:
 	@echo "Getting Dataset..."
-	python3.9 src/data/get_dataset.py
+	python3.8 src/data/get_dataset.py
+
+run_simple_sklearn_model:
+	@echo "Running simple sklearn model..."
+	python3.8 src/models/simple_sklear_model.py
 
 #################################################################################
 # Self Documenting Commands                                                     #

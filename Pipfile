@@ -11,7 +11,12 @@ click = "*"
 python-dotenv = "*"
 pyyaml = "*"
 tensorflow = "*"
+matplotlib = "*"
+sklearn = "*"
 scikit-learn = "*"
+spacy = "*"
+mlflow = "*"
+emoji = "*"
 
 [dev-packages]
 
