@@ -26,6 +26,10 @@ run_simple_sklearn_model:
 	@echo "Running simple sklearn model..."
 	python3.8 src/models/simple_sklear_model.py
 
+run_simple_flask_app:
+	@echo "Running simple FLASK app..."
+	python3.8 src/app/flask_api_test.py
+
 #################################################################################
 # Self Documenting Commands                                                     #
 #################################################################################

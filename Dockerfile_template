@@ -1,0 +1,20 @@
+# Has to be saved as Dockerfile
+# Base docker image
+FROM python:3.8.2-slim-buster
+
+# set up enviromental variable:
+ENV USERNAME=admin \
+    PASSWORD=admin1
+
+# run command from directory inside the image
+RUN make src/models.train_model.py
+
+# copy files from host to image - from to all: COPY . .
+COPY ./src/app ./src/app
+
+# CMD - only one cmd as entry point
+CMD['python', 'model.py']
+
+
+# To run:
+# docker build -t name:version lokalizacja
