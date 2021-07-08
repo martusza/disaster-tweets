@@ -9,6 +9,9 @@ pandas = "==1.2.4"
 numpy = "*"
 Keras-Preprocessing = "*"
 tensorflow = "==2.4.1"
+tensorflow-estimator = "==2.4.0"
+tensorflow-text = "==2.4.1"
+pytorch-pretrained-bert = "==0.6.2"
 click = "*"
 python-dotenv = "*"
 pyyaml = "*"
@@ -18,7 +21,12 @@ scikit-learn = "*"
 spacy = "*"
 mlflow = "*"
 emoji = "*"
-fasttext = {path = "/Users/kpabijan/Documents/03_Python/03_github/fastText"}
+tensorflow-hub = "==0.11.0"
+pydot = "==1.4.2"
+graphviz = "*"
+tf-models-official = "==2.4.0"
+transformers = "==4.8.2"
+fasttext = "*"
 
 [dev-packages]
 
