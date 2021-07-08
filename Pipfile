@@ -18,6 +18,7 @@ scikit-learn = "*"
 spacy = "*"
 mlflow = "*"
 emoji = "*"
+fasttext = {path = "/Users/kpabijan/Documents/03_Python/03_github/fastText"}
 
 [dev-packages]
 
