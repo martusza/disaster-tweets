@@ -26,6 +26,7 @@ pydot = "==1.4.2"
 graphviz = "*"
 tf-models-official = "==2.4.0"
 transformers = "==4.8.2"
+fasttext = "*"
 
 [dev-packages]
 
