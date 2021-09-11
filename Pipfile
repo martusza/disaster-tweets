@@ -27,6 +27,7 @@ graphviz = "*"
 tf-models-official = "==2.4.0"
 transformers = "==4.8.2"
 fasttext = "*"
+hyperopt = "==0.2.4"
 
 [dev-packages]
 
