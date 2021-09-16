@@ -31,7 +31,7 @@ hyper_space = {
         "max_features": hp.choice("max_features", ["auto", "sqrt", "log2"]),
         "max_leaf_nodes": hp.choice("max_leaf_nodes", list(np.arange(10,30)) + [None]),
         # "n_jobs": hp.choice("n_jobs", [2]),
-        # "class_weight": hp.choice("class_weight", ["balanced", "balanced_subsample"]),
+        "class_weight": hp.choice("class_weight", ["balanced", "balanced_subsample"]),
         "random_state": hp.choice("random_state", [seed])
     }
 }
@@ -101,9 +101,9 @@ def main(classifier,
             trials=trials,
     )
 
-    print("Best: {}".format(best))
-
-    best_model = classifiers[classifier](**best)
+    best_params = space_eval(space, trials.argmin)
+    print("Best params: {}".format(space_eval(space, trials.argmin)))
+    best_model = classifiers[classifier](**best_params)
     best_model.fit(X_train, y_train)
     X_test['predicted'] = best_model.predict(X_test)
     X_test.to_csv(output_table_name)
